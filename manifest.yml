@@ -1,0 +1,9 @@
+---
+applications:
+- name: scs-demo
+  memory: 1G
+  path: target/scs_demo-0.0.1-SNAPSHOT.jar
+  services:
+  - config-server-dev
+  env:
+    SPRING_PROFILES_ACTIVE: dev

@@ -1,0 +1,20 @@
+---
+spring:
+  application:
+    name: scs-demo
+  profiles:
+    active: local
+  cloud:
+    config:
+      uri: https://config-570f7994-ab00-45bf-8de1-54624165ac52.apps.sec.mzdemo.net
+      client:
+        oauth2:
+          access-token-uri: https://p-spring-cloud-services.uaa.sys.sec.mzdemo.net/oauth/token
+          client-id: p-config-server-72877614-1086-40c2-8072-32dd4516c81c
+          client-secret: NiON4rwCzJdU
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
