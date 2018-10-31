@@ -6,15 +6,24 @@ spring:
     active: local
   cloud:
     config:
-      uri: https://config-570f7994-ab00-45bf-8de1-54624165ac52.apps.sec.mzdemo.net
+      uri: CONFIG_SERVER_URI
       client:
         oauth2:
-          access-token-uri: https://p-spring-cloud-services.uaa.sys.sec.mzdemo.net/oauth/token
-          client-id: p-config-server-72877614-1086-40c2-8072-32dd4516c81c
-          client-secret: NiON4rwCzJdU
+          accessTokenUri: CONFIG_SERVER_ACCESS_TOKEN_URI
+          clientId: CONFIG_SERVER_CLIENT_ID
+          clientSecret: CONFIG_SERVER_CLIENT_SECRET
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: SERVICE_REGISTRY_SERVICE_URL
+    oauth2:
+      accessTokenUri: SERVICE_REGISTRY_ACCESS_TOKEN_URI
+      clientId: SERVICE_REGISTRY_CLIENT_ID
+      clientSecret: SERVICE_REGISTRY_CLIENT_SECRET
